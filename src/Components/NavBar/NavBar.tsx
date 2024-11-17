@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModelSection = () => {
+const NavBar = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const ModelSection = () => {
   )
 }
 
-export default ModelSection
+export default NavBar
