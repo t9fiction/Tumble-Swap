@@ -1,0 +1,48 @@
+.NavBar {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.NavBar_toggle_button {
+  position: fixed;         /* Fixed position relative to the viewport */
+  top: 20px;               /* Distance from the top of the screen */
+  right: 20px;             /* Distance from the right of the screen */
+  z-index: 9999;           /* Ensures it stays on top */
+  padding: 10px 20px;
+  background-color: var(--background-color);  /* Use theme variable for background */
+  color: var(--foreground-color);             /* Use theme variable for text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.NavBar_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.NavBar_box_left {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.NavBar_box_left_menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.NavBar_box_left_menu_item{
+    font-size: 1.2rem;
+    color: #cff80b;
+}
+
+/* .NavBar_box_middle{
+    background-color: ;
+} */

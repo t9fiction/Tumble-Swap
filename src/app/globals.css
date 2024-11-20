@@ -5,38 +5,39 @@
 @tailwind utilities;
 
 :root {
-  --background-light: #f9fafb;
-  --foreground-light: #000000;
-  --primary-light: #576c97;
-  --secondary-light: #88e9c9;
-  
-  --background-dark: #1f242e;
-  --foreground-dark: #e5e7eb;
-  --primary-dark: #164a9c;
-  --secondary-dark: #067e56;
-
-   /* Set dark theme by default */
-   --background: var(--background-dark);
-   --foreground: var(--foreground-dark);
-   --primary: var(--primary-dark);
-   --secondary: var(--secondary-dark);
+  --background-color: #f9fafb;
+  --foreground-color: #000000;
+  --primary-color: #576c97;
+  --secondary-color: #88e9c9;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
-/* Override for dark mode using prefers-color-scheme */
+.dark {
+  --background-color: #1f242e;
+  --foreground-color: #e5e7eb;
+  --primary-color: #164a9c;
+  --secondary-color: #067e56;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+/* Optional: Support system-level dark mode preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--background-dark);
-    --foreground: var(--foreground-dark);
-    --primary: var(--primary-dark);
-    --secondary: var(--secondary-dark);
+    --background-color: #1f242e;
+    --foreground-color: #e5e7eb;
+    --primary-color: #164a9c;
+    --secondary-color: #067e56;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Roboto', sans-serif;
+  color: var(--foreground-color);
+  background: var(--background-color);
+  font-family: var(--font-roboto);
 }
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
 }

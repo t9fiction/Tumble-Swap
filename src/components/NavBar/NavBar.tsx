@@ -5,6 +5,7 @@ import images from "../../assets"
 import { TokenList, Model } from '../index'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTheme } from '@/context/ThemeProvider'
 
 
 const NavBar = () => {
@@ -25,14 +26,24 @@ const NavBar = () => {
 
   const [openModel, setOpenModel] = useState(false)
   const [openTokenBox, setopenTokenBox] = useState(false)
+  const { theme, toggleTheme } = useTheme(); // Destructure theme and toggleTheme from context
+
 
   return (
     <div className={`${style.NavBar}`}>
+      <button onClick={toggleTheme} className={`${style.NavBar_toggle_button}`} aria-label="Toggle dark/light mode">
+        {theme === 'light' ? (
+          <img src="/icons/dark.svg" alt="Switch to Dark Mode" width={24} height={24} />
+        ) : (
+          <img src="/icons/light.svg" alt="Switch to Light Mode" width={24} height={24} />
+        )}
+      </button>
       <div className={`${style.NavBar_box}`}>
         <div className={`${style.NavBar_box_left}`}>
           <div className={`${style.NavBar_box_left_logo}`}>
             <Image src={images.uniswap} alt="logo" width={50} height={50} />
           </div>
+          {/* Left Section */}
           <div className={`${style.NavBar_box_left_menu}`}>
             {menuItems.map((item, index) => (
               <Link className={`${style.NavBar_box_left_links_item}`} key={index + 1}
@@ -44,23 +55,38 @@ const NavBar = () => {
             ))}
           </div>
         </div>
+        {/* Middle Section */}
+        <div className={`${style.NavBar_box_middle}`}>
+          <div className={`${style.NavBar_box_middle_search}`}>
+            <div className={`${style.NavBar_box_middle_search_img}`}>
+              <Image src={'/icons/search.svg'} alt="search" width={20} height={20} />
+            </div>
+            {/* <div className={`${style.NavBar_box_middle_search_input}`}> */}
+              <input type="text" placeholder="Search tokens and pools" />
+            {/* </div> */}
+          </div>
+        </div>
+        {/* Right Section */}
         <div className={`${style.NavBar_box_right}`}>
           <div className={`${style.NavBar_box_right_box}`} onClick={() => setopenTokenBox((prev) => !prev)}>
+            <div className={`${style.NavBar_box_right_box_img}`}>
+              <Image src={images.ether} alt="ether" width={30} height={30} />
+            </div>
             <div className={`${style.NavBar_box_right_box_heading}`}>
-              <p>Select a token</p>
+              <p>Select a Network</p>
             </div>
           </div>
-          {/* {openTokenBox && (
-            <TokenList setopenTokenBox={setopenTokenBox} />
-          )} */}
           <button className={`${style.NavBar_box_right_button}`} onClick={() => setOpenModel(true)}>
-            Connect
+            Address
           </button>
-          {/* {openModel && (
-            <Model setOpenModel={setOpenModel} />
-          )} */}
+          {openModel && (
+            <Model setOpenModel={setOpenModel} connectWallet="Connect" />
+          )}
         </div>
       </div>
+          {openTokenBox && (
+            <TokenList tokenData='hey' setopenTokenBox={setopenTokenBox} />
+          )}
 
     </div>
   )

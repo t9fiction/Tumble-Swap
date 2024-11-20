@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/Components";
-
+import { Navbar } from "@/components";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,11 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-        <Navbar />
-        {children}
+      <body className={`antialiased`}>
+        <ThemeProvider> {/* Wrap the whole app with ThemeProvider */}
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

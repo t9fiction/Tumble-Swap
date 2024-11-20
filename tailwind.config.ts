@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: 'media',
+  darkMode: 'class', // Use 'class' for dynamic dark mode control
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,10 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
+        background: 'var(--background-color)',
+        foreground: 'var(--foreground-color)',
+        primary: 'var(--primary-color)',
+        secondary: 'var(--secondary-color)',
       },
     },
   },
