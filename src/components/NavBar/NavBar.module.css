@@ -9,7 +9,7 @@
   right: 20px;             /* Distance from the right of the screen */
   z-index: 9999;           /* Ensures it stays on top */
   padding: 10px 20px;
-  background-color: var(--background-color);  /* Use theme variable for background */
+  background-color: transparent;  /* Use theme variable for background */
   color: var(--foreground-color);             /* Use theme variable for text color */
   border: none;
   border-radius: 5px;
@@ -43,6 +43,70 @@
     color: #cff80b;
 }
 
-/* .NavBar_box_middle{
-    background-color: ;
-} */
+.NavBar_box_middle{
+    background-color: var(--background-color);
+    width: 80%;
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    margin: auto;
+
+}
+
+.NavBar_box_middle_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Adjusts space between child elements */
+  cursor: pointer;
+  background-color: rgb(58, 77, 77);
+  padding: 0.5rem 1rem; /* Adds space around the content inside the box */
+  border-radius: 1rem; /* Adds rounded corners */
+}
+
+
+.NavBar_box_middle input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: #cff80b;
+}
+
+.NavBar_box_right{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.NavBar_box_right_box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--foreground-color);
+  padding: .5rem 1.5rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.NavBar_box_right_box_heading{
+  font-size: 1.2rem;
+  line-height: 0;
+  color: #505e0d;
+}
+
+.NavBar_box_right_button{
+  background-color: var(--foreground-color);
+  border: none;
+  outline: none;
+  color: #505e0d;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}

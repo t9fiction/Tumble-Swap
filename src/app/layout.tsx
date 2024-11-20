@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Poppins } from "next/font/google";
-import "./globals.css";
+import "./global.css";
 import { Navbar } from "@/components";
 import { ThemeProvider } from "@/context/ThemeProvider";
 

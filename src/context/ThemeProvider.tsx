@@ -1,4 +1,5 @@
 'use client'
+import "@/app/global.css"
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 

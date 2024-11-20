@@ -58,9 +58,7 @@ const NavBar = () => {
         {/* Middle Section */}
         <div className={`${style.NavBar_box_middle}`}>
           <div className={`${style.NavBar_box_middle_search}`}>
-            <div className={`${style.NavBar_box_middle_search_img}`}>
               <Image src={'/icons/search.svg'} alt="search" width={20} height={20} />
-            </div>
             {/* <div className={`${style.NavBar_box_middle_search_input}`}> */}
               <input type="text" placeholder="Search tokens and pools" />
             {/* </div> */}
