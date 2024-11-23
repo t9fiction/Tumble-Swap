@@ -31,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <ThemeProvider> {/* Wrap the whole app with ThemeProvider */}
+        <ThemeProvider>
           <Navbar />
-          {children}
+          <div className="container mx-auto w-full py-8">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

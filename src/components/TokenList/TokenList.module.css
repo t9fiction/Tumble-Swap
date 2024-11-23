@@ -1,0 +1,6 @@
+.TokenList{
+    position: absolute;
+    width: 20rem;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}

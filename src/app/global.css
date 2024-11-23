@@ -5,39 +5,37 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #f9fafb;
-  --foreground-color: #000000;
-  --primary-color: #576c97;
-  --secondary-color: #88e9c9;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
+  --background: #1e1e1e;
+  --foreground: #cff80b;
+  --primary: #576c97;
+  --secondary: #cff80b;
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  min-height: 100vh;
 }
 
-.dark {
-  --background-color: #1f242e;
-  --foreground-color: #e5e7eb;
-  --primary-color: #164a9c;
-  --secondary-color: #067e56;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
-}
-
-/* Optional: Support system-level dark mode preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #1f242e;
-    --foreground-color: #e5e7eb;
-    --primary-color: #164a9c;
-    --secondary-color: #067e56;
+    --background: #1e1e1e;
+    --foreground: #cff80b;
+    --primary: #244e91;
+    --secondary: #53eb25;
   }
 }
 
 body {
-  color: var(--foreground-color);
-  background: var(--background-color);
+  color: var(--foreground);
+  background: var(--background);
   font-family: var(--font-roboto);
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-poppins);
 }

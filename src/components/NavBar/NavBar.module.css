@@ -5,12 +5,12 @@
 
 .NavBar_toggle_button {
   position: fixed;         /* Fixed position relative to the viewport */
-  top: 20px;               /* Distance from the top of the screen */
-  right: 20px;             /* Distance from the right of the screen */
+  top: 10px;               /* Distance from the top of the screen */
+  right: 10px;             /* Distance from the right of the screen */
   z-index: 9999;           /* Ensures it stays on top */
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: transparent;  /* Use theme variable for background */
-  color: var(--foreground-color);             /* Use theme variable for text color */
+  color: var(--foreground);             /* Use theme variable for text color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -40,7 +40,7 @@
 
 .NavBar_box_left_menu_item{
     font-size: 1.2rem;
-    color: #cff80b;
+    color: var(--foreground);
 }
 
 .NavBar_box_middle{
@@ -49,7 +49,6 @@
     padding: 1rem 1.5rem;
     border-radius: .5rem;
     margin: auto;
-
 }
 
 .NavBar_box_middle_search {
@@ -69,7 +68,7 @@
   outline: none;
   border: none;
   font-size: 1rem;
-  color: #cff80b;
+  color: var(--foreground);
 }
 
 .NavBar_box_right{
@@ -83,7 +82,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--foreground-color);
+  background-color: var(--primary);
   padding: .5rem 1.5rem;
   border-radius: .5rem;
   cursor: pointer;
@@ -93,14 +92,14 @@
 .NavBar_box_right_box_heading{
   font-size: 1.2rem;
   line-height: 0;
-  color: #505e0d;
+  color: var(--foreground);
 }
 
 .NavBar_box_right_button{
-  background-color: var(--foreground-color);
+  background-color: var(--background);
   border: none;
   outline: none;
-  color: #505e0d;
+  color: var(--foreground);
   border-radius: .5rem;
   padding: .5rem 1.5rem;
   font-size: 1.2rem;
