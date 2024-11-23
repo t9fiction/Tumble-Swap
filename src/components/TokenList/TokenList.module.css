@@ -3,4 +3,70 @@
     width: 20rem;
     border-radius: 0.5rem;
     background-color: var(--background);
+    margin-top: 2rem;
+    /* margin-left: 56rem; */
+    /* margin-right: 20%; */
+    right: 2rem;
+    padding: 1rem;
 }
+
+.TokenList_title{
+    width: 100%;
+    padding: .2rem 1rem;
+    font-weight: 900;
+    line-height: 0;
+    color: var(--foreground);
+    font-size: 1rem;
+    border-radius: .5rem;
+}
+
+.TokenList_close {
+    position: absolute;
+    right: -1rem;
+    cursor: pointer;
+    top: -2rem;
+    z-index: 1111;
+}
+
+.TokenList_box{
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #d1f80b53;
+    padding-top: .8rem;
+    padding-bottom: .6rem;
+}
+
+.TokenList_box_info{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.TokenList_box_info p span {
+    font-weight: 400;
+    color: var(--foreground);
+    margin-right: .5rem;
+    font-size: smaller;
+
+}
+
+.TokenList_box_info_symbol{
+    background-color: var(--foreground);
+    padding: .5rem;
+    border-radius: .5rem;
+    color: var(--background);
+    font-weight: 400;
+
+}
+
+@media only screen and (max-width: 35em){
+    .TokenList{
+        right: 0rem;
+        width: 90%;
+    }
+    .TokenList_close{
+        right: 1rem;
+    }
+
+  }

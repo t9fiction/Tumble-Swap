@@ -70,7 +70,7 @@ const NavBar = () => {
             <div className={`${style.NavBar_box_right_box_img}`}>
               <Image src={images.ether} alt="ether" width={30} height={30} />
             </div>
-            <div className={`${style.NavBar_box_right_box_heading}`}>
+            <div className={`${style.NavBar_box_right_box_heading} hidden lg:flex` }>
               <p>Select a Network</p>
             </div>
           </div>

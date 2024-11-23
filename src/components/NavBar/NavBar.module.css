@@ -9,7 +9,7 @@
   right: 10px;             /* Distance from the right of the screen */
   z-index: 9999;           /* Ensures it stays on top */
   padding: 5px 10px;
-  background-color: transparent;  /* Use theme variable for background */
+  /* background-color: #fff;  Use theme variable for background */
   color: var(--foreground);             /* Use theme variable for text color */
   border: none;
   border-radius: 5px;
@@ -82,7 +82,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--primary);
+  background-color: var();
   padding: .5rem 1.5rem;
   border-radius: .5rem;
   cursor: pointer;
