@@ -14,7 +14,7 @@ const Token: React.FC<TokenProps> = ({ setOpenSetting }) => {
       <div className={style.Token_box}>
         <div className={style.Token_box_heading}>
 
-          <h4>Settings</h4>
+          <h4>Setting</h4>
           <Image src={images.close} alt="close" width={50} height={50} onClick={() => setOpenSetting(false)} />
         </div>
 
@@ -37,12 +37,16 @@ const Token: React.FC<TokenProps> = ({ setOpenSetting }) => {
           <input type="text" name="" id="" placeholder='0.10%' />
           <button>minutes</button>
         </div>
-        <div>Interface Setting</div>
-        <div className={style.Token_box_toggle}>
-          <p className={style.Token_box_para}>
-            Transaction deadline
-          </p>
-          <Toggle />
+        <div className='flex flex-row items-center justify-between py-2'>
+          <div className='flex flex-col'>
+            <h2 className='pb-1'>Interface Setting</h2>
+            <div className={style.Token_box_toggle}>
+              <p className={style.Token_box_para}>
+                Transaction deadline
+              </p>
+            </div>
+          </div>
+          <Toggle label={"No"} />
         </div>
       </div>
     </div>

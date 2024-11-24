@@ -4,6 +4,7 @@ import styles from './Hero.module.css';
 import images from '../../assets/index'; // Ensure this exists and is valid
 import { Search, Token } from '../index'; // Ensure the Search component is valid and properly imported
 import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 
 interface HeroProps {
   accounts: string; // Props should match the types you're passing
@@ -12,7 +13,7 @@ interface HeroProps {
 
 interface Token {
   name: string;
-  image: string;
+  image: string | StaticImageData; // Allow both string and StaticImageData
 }
 
 const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
@@ -48,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
         <div className={styles.HeroSection_box_input}>
 
           <input type="text" placeholder='0' />
-          <button onClick={() => setOpenToken(true)}>
+          <button onClick={() => setOpenTokenTwo(true)}>
             <Image src={tokenTwo.image || images.etherlogo} alt='ether' width={20} height={20} />
             {tokenTwo.name || 'ETH'}
             <small>
@@ -81,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
         )
       }
       {
-        openToken && (
+        openTokenTwo && (
           <Search
             openToken={setOpenTokenTwo}
             tokens={setTokenTwo}

@@ -9,39 +9,42 @@
 
 }
 
+.Token_box{
+
+}
+
 .Token_box_heading{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .Token_box h2{
     font-size: 1.2rem;
     line-height: 0;
+    padding-top: .5rem;
 }
 
 .Token_box_para{
     display: flex;
     align-items: center;
     gap: 1rem;
-
 }
 
 .Token_box_input{
     display: flex;
     gap: 1rem;
     align-items: center;
-
 }
 
 .Token_box_input button{
     background-color: var(--foreground);
+    color: var(--background);
     border: 0;
     outline: 0;
     padding: .5rem 1rem;
     border-radius: .5rem;
-    font-size: 900;
+    font-weight: 900;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -55,7 +58,7 @@
     padding: .5rem 1rem;
     border-radius: .5rem;
     text-align: end;
-    color: var(--foreground);
+    /* color: var(--foreground); */
 }
 
 .Token_box_toggle{
