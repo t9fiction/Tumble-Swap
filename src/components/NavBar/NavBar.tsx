@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import style from './NavBar.module.css'
 import images from "../../assets"
-import { TokenList, Model } from '../index'
+import { TokenList, Modal } from '../index'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from '@/context/ThemeProvider'
@@ -24,7 +24,7 @@ const NavBar = () => {
     }
   ]
 
-  const [openModel, setOpenModel] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   const [openTokenBox, setopenTokenBox] = useState(false)
   const { theme, toggleTheme } = useTheme(); // Destructure theme and toggleTheme from context
 
@@ -74,11 +74,11 @@ const NavBar = () => {
               <p>Select a Network</p>
             </div>
           </div>
-          <button className={`${style.NavBar_box_right_button}`} onClick={() => setOpenModel(true)}>
+          <button className={`${style.NavBar_box_right_button}`} onClick={() => setOpenModal(true)}>
             Address
           </button>
-          {openModel && (
-            <Model setOpenModel={setOpenModel} connectWallet="Connect" />
+          {openModal && (
+            <Modal setOpenModal={setOpenModal} connectWallet="Connect" />
           )}
         </div>
       </div>

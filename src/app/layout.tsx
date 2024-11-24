@@ -3,6 +3,7 @@ import { Roboto, Poppins } from "next/font/google";
 import "./global.css";
 import { Navbar } from "@/components";
 import { ThemeProvider } from "@/context/ThemeProvider";
+import { GlobalProvider } from "@/context/GlobalContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,12 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <ThemeProvider>
-          <Navbar />
-          <div className="container mx-auto w-full py-8">
-            {children}
-          </div>
-        </ThemeProvider>
+        <GlobalProvider>
+          <ThemeProvider>
+            <Navbar />
+            <div className="container mx-auto w-full py-8">
+              {children}
+            </div>
+          </ThemeProvider>
+        </GlobalProvider>
       </body>
     </html>
   );
