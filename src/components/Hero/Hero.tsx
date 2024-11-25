@@ -5,6 +5,8 @@ import images from '../../assets/index'; // Ensure this exists and is valid
 import { Search, Token } from '../index'; // Ensure the Search component is valid and properly imported
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import ConnectButton from '../ConnectButton';
+import { useAppKitAccount } from '@reown/appkit/react'
 
 interface HeroProps {
   accounts: string; // Props should match the types you're passing
@@ -20,6 +22,7 @@ const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
   const [openSetting, setOpenSetting] = useState(false);
   const [openToken, setOpenToken] = useState(false);
   const [openTokenTwo, setOpenTokenTwo] = useState(false);
+  const { address, isConnected } = useAppKitAccount();
 
   const [tokenOne, setTokenOne] = useState<Token>({ name: '', image: '' });
   const [tokenTwo, setTokenTwo] = useState<Token>({ name: '', image: '' });
@@ -61,13 +64,13 @@ const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
         </div>
 
         {
-          accounts ? (
-            <button className={styles.HeroSection_box_btn}>
-              Connect Wallet
+          isConnected ? (
+            <button className={`flex w-full py-2 bg-foreground text-background rounded-lg my-2 uppercase justify-center `}>
+              Swap
             </button>
           ) : (
-            <button className={styles.HeroSection_box_btn} onClick={()=>{}}>
-              Swap
+            <button className={`flex w-full py-2 bg-foreground text-background rounded-lg my-2 uppercase justify-center`} onClick={()=>{}}>
+              <ConnectButton />
             </button>
           )
         }

@@ -84,9 +84,9 @@ const NavBar = () => {
           )} */}
         </div>
       </div>
-          {openTokenBox && (
+          {/* {openTokenBox && (
             <TokenList tokenData='hey' setopenTokenBox={setopenTokenBox} />
-          )}
+          )} */}
 
     </div>
   )
