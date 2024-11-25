@@ -20,10 +20,10 @@ export default function ConnectButton() {
     return (
         <div>
             {!isConnected ?
-                <div onClick={handleOpen} className="uppercase">
+                <div onClick={handleOpen} className="uppercase border border-spacing-1 rounded-sm py-2 px-4 border-foreground">
                     Connect
                 </div>
-                : <div className="">
+                : <div className="border border-spacing-1 border-foreground ">
                     <appkit-button />
                 </div>
             }
