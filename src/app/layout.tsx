@@ -4,6 +4,8 @@ import "./global.css";
 import { Navbar } from "@/components";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { GlobalProvider } from "@/context/GlobalContext";
+import ContextProvider from "@/context/WagmiProvider";
+import { headers } from "next/headers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,22 +26,27 @@ export const metadata: Metadata = {
   description: "Your one stop for every Crypto Task",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Fetch headers asynchronously
+  const headersList = await headers();
+  const cookies = headersList.get('cookie'); // Access the 'cookie' header
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <GlobalProvider>
-          <ThemeProvider>
-            <Navbar />
-            <div className="container mx-auto w-full py-8">
-              {children}
-            </div>
-          </ThemeProvider>
-        </GlobalProvider>
+        <ContextProvider cookies={cookies}>
+          <GlobalProvider>
+            <ThemeProvider>
+              <Navbar />
+              <div className="container mx-auto w-full py-8">
+                {children}
+              </div>
+            </ThemeProvider>
+          </GlobalProvider>
+        </ContextProvider>
       </body>
     </html>
   );

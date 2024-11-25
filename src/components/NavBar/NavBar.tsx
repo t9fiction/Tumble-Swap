@@ -6,6 +6,7 @@ import { TokenList, Modal } from '../index'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from '@/context/ThemeProvider'
+import ConnectButton from '../ConnectButton'
 
 
 const NavBar = () => {
@@ -66,20 +67,21 @@ const NavBar = () => {
         </div>
         {/* Right Section */}
         <div className={`${style.NavBar_box_right}`}>
-          <div className={`${style.NavBar_box_right_box}`} onClick={() => setopenTokenBox((prev) => !prev)}>
+          {/* <div className={`${style.NavBar_box_right_box}`} onClick={() => setopenTokenBox((prev) => !prev)}>
             <div className={`${style.NavBar_box_right_box_img}`}>
               <Image src={images.ether} alt="ether" width={30} height={30} />
             </div>
             <div className={`${style.NavBar_box_right_box_heading} hidden lg:flex` }>
               <p>Select a Network</p>
             </div>
-          </div>
+          </div> */}
           <button className={`${style.NavBar_box_right_button}`} onClick={() => setOpenModal(true)}>
-            Address
+          <ConnectButton />
+            {/* Address */}
           </button>
-          {openModal && (
+          {/* {openModal && (
             <Modal setOpenModal={setOpenModal} connectWallet="Connect" />
-          )}
+          )} */}
         </div>
       </div>
           {openTokenBox && (
