@@ -4,12 +4,12 @@ import { useAppKitAccount, useDisconnect } from '@reown/appkit/react'
 import { useAppKit } from '@reown/appkit/react';
 
 export default function ConnectButton() {
-    const { open, close } = useAppKit();
-    const { address, isConnected } = useAppKitAccount();
+    const { open } = useAppKit();
+    const { address, isConnected, caipAddress, status } = useAppKitAccount()
     const { disconnect } = useDisconnect()
 
     const handleOpen = () => {
-        open(); // Opens the AppKit interface or modal
+        open() // Opens the AppKit interface or modal
     };
 
     const handleClose = () => {
@@ -20,11 +20,11 @@ export default function ConnectButton() {
     return (
         <div>
             {!isConnected ?
-                <div onClick={handleOpen} className="">
+                <div onClick={handleOpen} className="uppercase">
                     Connect
                 </div>
-                : <div onClick={handleClose} className="">
-                    Disconnect
+                : <div className="">
+                    <appkit-button />
                 </div>
             }
         </div>
