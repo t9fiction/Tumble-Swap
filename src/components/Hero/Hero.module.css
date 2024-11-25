@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    width: 50%;
     line-height: 0;
     background-color: var(--foreground);
     color: var(--background);
