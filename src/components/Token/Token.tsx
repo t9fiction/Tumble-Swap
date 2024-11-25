@@ -28,23 +28,23 @@ const Token: React.FC<TokenProps> = ({ setOpenSetting }) => {
           <input type="text" name="" id="" placeholder='0.10%' />
         </div>
 
-        <p className={style.Token_box_para}>
-          Slippage tolerance {''}
+        <p className={`${style.Token_box_para} pt-1`}>
+          Transaction deadline {''}
           <Image src={images.lock} alt='img' width={20} height={20} />
         </p>
 
         <div className={style.Token_box_input}>
-          <input type="text" name="" id="" placeholder='0.10%' />
+          <input type="text" name="" id="" placeholder='3' />
           <button>minutes</button>
         </div>
         <div className='flex flex-row items-center justify-between py-2'>
           <div className='flex flex-col'>
-            <h2 className='pb-1'>Interface Setting</h2>
-            <div className={style.Token_box_toggle}>
+            <h2 className='pb-2 mt-4'>Interface Setting</h2>
+            {/* <div className={style.Token_box_toggle}>
               <p className={style.Token_box_para}>
                 Transaction deadline
               </p>
-            </div>
+            </div> */}
           </div>
           <Toggle label={"No"} />
         </div>

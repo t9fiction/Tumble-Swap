@@ -35,23 +35,25 @@ const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
             <Image src={images.close} alt='close' width={50} height={50} onClick={() => setOpenSetting(true)} />
           </div>
         </div>
+
         <div className={styles.HeroSection_box_input}>
 
           <input type="text" placeholder='0' />
           <button onClick={() => setOpenToken(true)}>
-            <Image src={tokenOne.image || images.etherlogo} alt='ether' width={20} height={20} />
+            <Image src={tokenOne.image || images.ether} alt='ether' width={20} height={20} />
             {tokenOne.name || 'ETH'}
             <small>
               9474
             </small>
           </button>
         </div>
+                
         <div className={styles.HeroSection_box_input}>
 
           <input type="text" placeholder='0' />
           <button onClick={() => setOpenTokenTwo(true)}>
-            <Image src={tokenTwo.image || images.etherlogo} alt='ether' width={20} height={20} />
-            {tokenTwo.name || 'ETH'}
+            <Image src={tokenTwo.image || images.ether} alt='ether' width={20} height={20} />
+            {tokenTwo.name || 'UNI'}
             <small>
               9474
             </small>
