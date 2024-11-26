@@ -24,6 +24,7 @@
     "wagmi": "^2.13.0"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
     "@types/chai": "^5.0.1",
     "@types/node": "^20",
