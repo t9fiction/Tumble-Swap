@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
-      <Hero accounts="Hey" tokenData="Data" />
+      <Hero tokenData="Data" />
     </div>
   );
 }

@@ -9,7 +9,6 @@ import ConnectButton from '../ConnectButton';
 import { useAppKitAccount } from '@reown/appkit/react'
 
 interface HeroProps {
-  accounts: string; // Props should match the types you're passing
   tokenData: string;
 }
 
@@ -18,7 +17,7 @@ interface Token {
   image: string | StaticImageData; // Allow both string and StaticImageData
 }
 
-const Hero: React.FC<HeroProps> = ({ accounts, tokenData }) => {
+const Hero: React.FC<HeroProps> = ({ tokenData }) => {
   const [openSetting, setOpenSetting] = useState(false);
   const [openToken, setOpenToken] = useState(false);
   const [openTokenTwo, setOpenTokenTwo] = useState(false);
